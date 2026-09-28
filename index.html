@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guia de Estudos · Língua Portuguesa e Literatura</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F4EF;--ink:#1F2421;--lit:#9E2A2B;--ling:#1B4965;--peach:#E8A598;--ln:rgba(31,36,33,.15);--e:cubic-bezier(.2,.8,.2,1);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Inter,Helvetica,Arial,sans-serif}
+.w{padding:0 5vw}
+.g{display:grid;grid-template-columns:repeat(12,1fr)}
+h1,h2{margin:0;text-transform:uppercase;letter-spacing:-.03em}
+h1{font-weight:900;font-size:clamp(2.4rem,8vw,7.2rem);line-height:.92}
+h1 small{display:block;font-weight:500;font-size:.28em;letter-spacing:.02em;margin-top:1.2rem}
+h2{font-weight:700;font-size:clamp(1.6rem,4vw,3rem);line-height:1}
+.lab{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.hero{min-height:92vh;padding-top:8vh;padding-bottom:6vh;border-bottom:2px solid var(--ink);align-items:end;gap:0 2vw}
+.hero .l{grid-column:1/9}
+.hero .r{grid-column:9/13;border-left:1px solid var(--ln);padding-left:2vw}
+#cnt{font-weight:900;font-size:clamp(3rem,8vw,6rem);line-height:1;letter-spacing:-.04em}
+.bar{height:10px;border:1px solid var(--ink);margin:.4rem 0 1rem}
+.bar i{display:block;height:100%;width:0;transition:width .6s var(--e)}
+#bl{background:var(--lit)}#bg{background:var(--ling)}
+.loop{width:100%;max-width:260px;margin-top:1rem}
+.loop .a{transform-origin:100px 100px;animation:rot 14s linear infinite}
+.loop .b{animation:mv 5s ease-in-out infinite alternate}
+@keyframes rot{to{transform:rotate(360deg)}}
+@keyframes mv{to{transform:translateX(90px)}}
+section{padding:10vh 5vw;border-bottom:1px solid var(--ink)}
+#lit h2,#lit .lab{color:var(--lit)}
+.sec-h{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:5vh;flex-wrap:wrap}
+#book{width:min(220px,40vw);overflow:visible}
+#book *{opacity:var(--t,0)}
+.pl{transform:translateX(calc((1 - var(--t,0)) * -90px))}
+.pr{transform:translateX(calc((1 - var(--t,0)) * 90px))}
+.qu{transform:translate(calc((1 - var(--t,0)) * 70px),calc((1 - var(--t,0)) * -90px))}
+.card{border-top:1px solid var(--ink);padding:1.4rem 1.4rem 1.4rem 0;position:relative;transition:background .3s}
+.c1{grid-column:1/8}.c2{grid-column:8/13;padding-left:1.4rem;border-left:1px solid var(--ln)}.c3{grid-column:1/13;display:grid;grid-template-columns:5fr 7fr;gap:2rem}
+.n{font-weight:900;font-size:.8rem;color:var(--lit)}
+.card h3{font-weight:900;font-size:clamp(1.6rem,3.6vw,3.2rem);line-height:1;margin:.6rem 0 1rem;letter-spacing:-.03em}
+.c2 h3,.c3 h3{font-size:clamp(1.3rem,2.4vw,2rem)}
+.bd{display:inline-block;background:var(--peach);color:var(--ink);font-size:.72rem;font-weight:700;padding:.2rem .6rem;letter-spacing:.06em;text-transform:uppercase;transition:transform .35s var(--e)}
+.idx{list-style:none;padding:0;margin:1rem 0}
+.idx li{display:flex;justify-content:space-between;border-top:1px solid var(--ln);padding:.35rem 0;font-size:.9rem}
+.tg{background:none;border:1px solid currentColor;color:inherit;font:700 .72rem Inter;letter-spacing:.1em;text-transform:uppercase;padding:.45rem .8rem;cursor:pointer;margin:.6rem .6rem 0 0}
+.tg:hover{background:var(--ink);color:var(--bg)}
+.chk{font-size:.8rem;font-weight:500;display:inline-flex;gap:.4rem;align-items:center;cursor:pointer}
+.chk input{accent-color:var(--lit);width:16px;height:16px}
+.pan{display:none;margin-top:1rem;font-size:.92rem;max-width:64ch}
+.pan.on{display:block}
+.pan h4{margin:1rem 0 .2rem;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+.pan ul{margin:.2rem 0;padding-left:1.1rem}
+svg.ic{width:100%;max-height:150px}
+#ling{background:var(--bg)}
+#ling h2,#ling .lab{color:var(--ling)}
+.split{display:grid;grid-template-columns:1fr 2.4fr;gap:0}
+.sl{position:sticky;top:0;height:100vh;border-right:2px solid var(--ling);display:flex;align-items:flex-start}
+.sl h2{writing-mode:vertical-rl;transform:rotate(180deg);font-size:clamp(3rem,9vw,8rem);font-weight:900;line-height:.9;height:90vh;margin:5vh 0 0 1vw}
+.sr{padding-left:3vw}
+.row{display:block;width:100%;text-align:left;background:none;border:0;border-top:1px solid var(--ling);color:var(--ink);font:700 clamp(1.5rem,3.6vw,3rem)/1.1 Inter;letter-spacing:-.03em;padding:1.4rem 1rem;cursor:pointer;transition:background .35s var(--e),color .35s}
+.box{border:1px solid var(--ling);margin:1rem 0;padding:1.2rem 1rem;transition:background .35s var(--e),color .35s}
+.box h3{margin:.4rem 0 .6rem;font-size:clamp(1.3rem,2.6vw,2rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;cursor:pointer}
+.box .bd{background:var(--ling);color:#fff;margin-right:.4rem}
+.box .chk input,#ling .chk input{accent-color:var(--ling)}
+.pw{padding:0 1rem}
+.pw .pan{color:var(--ink)}
+.rowp{background:none}
+.dgwrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:2rem 0}
+#dg{display:block;width:560px;max-width:100%}
+@media(min-width:660px){#dg{width:100%;max-width:600px}}
+#dg text{font:500 15px Inter;fill:var(--ink)}
+#dg .lb{font:700 10px Inter;letter-spacing:.1em;fill:rgba(31,36,33,.4);text-anchor:middle;transition:fill .3s}
+#dg .w{text-anchor:middle;padding:0}
+.ln{stroke:var(--ling);stroke-width:2;stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .6s var(--e)}
+.base{stroke:rgba(31,36,33,.2);stroke-width:1}
+[data-a~=adj] .adj .ln,[data-a~=apo] .apo .ln,[data-a~=voc] .voc .ln{stroke-dashoffset:0}
+[data-a~=adj] .adj .lb,[data-a~=apo] .apo .lb,[data-a~=voc] .voc .lb{fill:var(--ling)}
+[data-a~=adj] .adj .wd,[data-a~=apo] .apo .wd,[data-a~=voc] .voc .wd{fill:var(--ling);font-weight:700}
+#quiz{background:var(--ink);color:var(--bg)}
+.q{max-width:64ch;margin:2rem 0;border-top:1px solid #f7f4ef33;padding-top:1rem}
+.q p{font-weight:700}
+.q button{display:block;width:100%;text-align:left;background:none;color:inherit;border:1px solid #f7f4ef44;padding:.7rem 1rem;margin:.4rem 0;font:inherit;cursor:pointer;transition:.25s var(--e)}
+.q button.ok{background:var(--peach);color:var(--ink);border-color:var(--peach)}
+.q button.no{background:var(--lit);border-color:var(--lit)}
+#score{font-weight:900;font-size:2rem}
+.dock{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);display:flex;gap:.2rem;padding:.35rem;z-index:9;box-shadow:0 8px 30px rgba(0,0,0,.25)}
+.dock a,.dock button{color:inherit;text-decoration:none;font:700 .72rem Inter;letter-spacing:.1em;text-transform:uppercase;padding:.6rem .9rem;background:none;border:0;cursor:pointer;transition:background .3s}
+.dock .l:before,.dock .g2:before{content:"";display:inline-block;width:8px;height:8px;margin-right:.5rem}
+.dock .l:before{background:var(--lit)}.dock .g2:before{background:#4b8db3}
+#ck{position:fixed;left:50%;bottom:calc(72px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--bg);border:2px solid var(--ink);padding:1rem 1.2rem;z-index:9;display:none;min-width:270px}
+#ck.on{display:block}
+#ck label{display:flex;gap:.6rem;padding:.3rem 0;font-size:.9rem;cursor:pointer}
+.rv{opacity:0;transform:translateY(30px);transition:opacity .8s var(--e),transform .8s var(--e)}
+.rv.on{opacity:1;transform:none}
+footer{padding:4vh 5vw 14vh;font-size:.8rem;opacity:.6}
+@media(max-width:800px){.hero .l,.hero .r{grid-column:1/13;border:0;padding:1rem 0 0}.c1,.c2{grid-column:1/13;padding-left:0;border-left:0}.c3{grid-template-columns:1fr}.split{grid-template-columns:1fr}.sl{position:static;height:auto;border:0}.sl h2{writing-mode:horizontal-tb;transform:none;height:auto;margin:0 0 2rem}.sr{padding:0}}
+@media(max-width:640px){
+.w{padding:0 6vw}
+section{padding:7vh 6vw}
+.hero{min-height:auto;padding-top:6vh;padding-bottom:4vh}
+.ix li a{padding:.65rem 0}
+.card{padding:1.1rem 2.4rem 1.1rem 0}
+.tp{padding:1.3rem 2.4rem 1.3rem .2rem}
+.pls{top:.9rem;right:0}
+.tp .pls{top:1.1rem;right:0}
+.card h3{font-size:clamp(1.4rem,7vw,2rem)}
+.tp h3{font-size:clamp(1.5rem,7.5vw,2.2rem)}
+#dg text{font-size:16px}
+#dg .lb{font-size:11px}
+.dock{gap:0;padding:.3rem}
+.dock a,.dock button{padding:.55rem .6rem;font-size:.64rem}
+}
+@media(pointer:coarse){.card,.tp,.row{-webkit-tap-highlight-color:transparent}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.loop *{animation:none!important}html{scroll-behavior:auto}}
+
+.card{cursor:pointer}
+.pls{position:absolute;top:1rem;right:1rem;font-size:2rem;font-weight:300;line-height:1;transition:transform .35s var(--e)}
+.open>.pls,.open .pls{transform:rotate(45deg)}
+.sm{max-width:50ch;margin:.2rem 0 1rem;font-size:1.02rem}
+.pan{display:none;margin-top:1.2rem;border-top:1px solid currentColor;padding-top:.6rem;cursor:auto;max-width:68ch}
+.open .pan{display:block;animation:fd .5s var(--e)}
+@keyframes fd{from{opacity:0;transform:translateY(-8px)}}
+.c3>.pan{grid-column:1/-1}
+.card h3{margin-top:.5rem}
+.d{stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset 1.8s var(--e) .3s}
+.on .d{stroke-dashoffset:0}
+.ic{transition:transform .5s var(--e)}
+.card:hover .ic{transform:translateY(-4px)}
+.tp{border-top:1px solid var(--ling);padding:1.6rem 1rem;position:relative;cursor:pointer;transition:background .35s var(--e),color .35s}
+.tp:hover{background:var(--ling);color:#fff}
+.tp h3{font-weight:900;font-size:clamp(1.8rem,4vw,3.2rem);line-height:1;margin:.5rem 0 .6rem;letter-spacing:-.03em}
+.tp .n{color:inherit;opacity:.6}
+.tp .pls{top:1.3rem;right:1rem}
+.ix{list-style:none;padding:0;margin:1.2rem 0}
+.ix a{display:flex;gap:1rem;padding:.45rem 0;border-top:1px solid var(--ln);color:inherit;text-decoration:none;font-weight:500;font-size:.92rem;transition:padding .3s var(--e)}
+.ix a:hover{padding-left:.5rem}
+.ix b{font-weight:900}
+
+body{overflow-x:clip}
+svg.ic{overflow:visible;transition:max-height .7s var(--e)}
+.open svg.ic{max-height:0;transition-delay:.6s}
+.ic>*{transform-box:fill-box;transform-origin:center;transition:transform .9s cubic-bezier(.5,0,.2,1) calc(var(--i,0)*35ms),opacity .7s ease calc(var(--i,0)*35ms)}
+.ic>.d{transition:stroke-dashoffset 1.8s var(--e) .3s,transform .9s cubic-bezier(.5,0,.2,1) calc(var(--i,0)*35ms),opacity .7s ease calc(var(--i,0)*35ms)}
+.open .ic>*{transform:translate(var(--dx,0px),var(--dy,0px)) rotate(var(--r,0deg)) scale(.5);opacity:0}
+@media(prefers-reduced-motion:reduce){.ic>*{transition:none}}
+
+.pan{display:grid;grid-template-rows:0fr;border-top:0;padding-top:0;margin-top:0;transition:grid-template-rows .7s var(--e),margin-top .7s var(--e)}
+.open .pan{display:grid;grid-template-rows:1fr;margin-top:1.2rem;animation:none}
+.pi{overflow:hidden;min-height:0;border-top:1px solid currentColor;padding-top:.6rem;opacity:0;transform:translateY(-10px);transition:opacity .4s ease,transform .6s var(--e)}
+.open .pi{opacity:1;transform:none;transition-delay:.12s}
+.pi>*{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .6s var(--e)}
+.open .pi>*{opacity:1;transform:none;transition-delay:calc(.2s + var(--k,0)*70ms)}
+.wd2{display:inline-block;white-space:nowrap}
+.ch{display:inline-block;transform-origin:50% 85%;font-weight:inherit;transition:font-weight .25s var(--e),transform .25s var(--e)}
+
+@media(prefers-reduced-motion:reduce){.pan,.pi,.pi>*,.ch{transition:none}}
+
+@media(hover:hover) and (pointer:fine){
+.card:hover{background:rgba(158,42,43,.05)}
+.row:hover,.box:hover{background:var(--ling);color:#fff}
+.row:hover .bd,.box:hover .bd{background:#fff;color:var(--ling)}
+.card:hover .bd{transform:translateX(4px)}
+.q button:hover{border-color:var(--peach)}
+.dock a:hover,.dock button:hover{background:#ffffff22}
+.ch:hover{font-weight:900;transform:scale(1.14)}
+}
+</style></head><body>
+<header class="w g hero">
+<div class="l"><div class="lab">Guia de estudos</div><h1>Guia de Estudos<small>Língua Portuguesa e Literatura</small></h1></div>
+<div class="r"><div class="lab">Índice</div>
+<ul class="ix"><li><a href="#c0"><b style="color:var(--lit)">01</b>Lírica de Castro Alves</a></li><li><a href="#c1"><b style="color:var(--lit)">02</b>Romance urbano</a></li><li><a href="#c2"><b style="color:var(--lit)">03</b>Realismo em Portugal</a></li><li><a href="#c3"><b style="color:var(--ling)">04</b>Semântica</a></li><li><a href="#c4"><b style="color:var(--ling)">05</b>Adjunto adverbial</a></li><li><a href="#c5"><b style="color:var(--ling)">06</b>Aposto e Vocativo</a></li></ul>
+<svg class="loop" viewBox="0 0 200 200" fill="none" stroke="#1F2421" stroke-width="1.5"><g class="a"><rect x="50" y="50" width="100" height="100"/></g><circle cx="100" cy="100" r="60" stroke="#9E2A2B"/><rect class="b" x="30" y="92" width="16" height="16" fill="#1B4965" stroke="none"/><line x1="10" y1="100" x2="190" y2="100"/></svg></div>
+</header>
+
+<section id="lit">
+<div class="sec-h"><div><div class="lab">Área 01</div><h2>Literatura</h2></div></div>
+<div class="g">
+<article class="card c1 rv" id="c0" data-i="0"><span class="pls">+</span><div><span class="n">01</span><h3>A lírica de Castro Alves</h3><p class="sm"></p>
+<svg class="ic" viewBox="0 0 300 140" fill="none" stroke="#1F2421" stroke-width="1.5"><circle cx="235" cy="42" r="24" fill="#9E2A2B" stroke="none"/><path class="d" pathLength="100" d="M0 138L60 62L98 104L150 44L214 138"/><polygon points="95,38 150,16 205,38 150,31" fill="#1F2421" stroke="none"/><ellipse cx="236" cy="118" rx="13" ry="7"/><ellipse cx="258" cy="118" rx="13" ry="7"/><path d="M274 108L282 100M274 128L282 136" stroke="#9E2A2B" stroke-width="3"/></svg></div><div class="pan"></div></article>
+<article class="card c2 rv" id="c1" data-i="1"><span class="pls">+</span><div><span class="n">02</span><h3>O romance urbano: a crônica de costumes</h3><p class="sm"></p>
+<svg class="ic" viewBox="0 0 300 140" fill="none" stroke="#1F2421" stroke-width="1.5"><path d="M170 138Q215 10 262 138Z" fill="#E8A598" stroke="none"/><rect x="10" y="70" width="40" height="68"/><path d="M10 70L30 54L50 70"/><rect x="50" y="90" width="34" height="48"/><rect x="84" y="56" width="44" height="82"/><rect x="128" y="84" width="36" height="54" fill="#9E2A2B" stroke="none"/><path d="M22 84h8M36 84h8M22 100h8M36 100h8M96 72h8M110 72h8M96 90h8M110 90h8M62 104h8"/><path d="M190 138V96"/><circle cx="190" cy="92" r="4" fill="#1F2421"/><circle cx="222" cy="112" r="5" fill="#1F2421"/><path d="M216 138L222 120L228 138Z" fill="#1F2421"/><circle cx="244" cy="112" r="5" fill="#9E2A2B" stroke="none"/><path d="M236 138L244 120L252 138Z" fill="#9E2A2B" stroke="none"/><path d="M0 138H300"/></svg></div><div class="pan"></div></article>
+<article class="card c3 rv" id="c2" data-i="2"><span class="pls">+</span><div><span class="n">03</span><h3>Realismo em Portugal</h3><p class="sm"></p></div>
+<svg class="ic" viewBox="0 0 300 140" fill="none" stroke="#1F2421" stroke-width="1.5"><circle class="d" pathLength="100" cx="110" cy="58" r="44" stroke-width="3"/><path d="M142 90L178 128" stroke-width="8"/><rect x="92" y="60" width="36" height="28" fill="#1F2421" stroke="none"/><polygon points="92,60 110,42 128,60" fill="#9E2A2B" stroke="none"/><path d="M110 28v14M104 34h12" stroke="#9E2A2B" stroke-width="2"/><path d="M154 58H206" stroke-dasharray="4 4"/><rect x="222" y="60" width="34" height="46" fill="#1F2421" stroke="none"/><rect x="222" y="92" width="34" height="6" fill="#9E2A2B" stroke="none"/><rect x="210" y="104" width="58" height="8" fill="#1F2421" stroke="none"/></svg><div class="pan"></div></article>
+</div></section>
+
+<section id="ling"><div class="split">
+<div class="sl"><h2>Análise Linguística</h2></div>
+<div class="sr">
+<article class="tp rv" id="c3" data-i="3" data-h=""><span class="pls">+</span><span class="n">01</span><h3>Semântica</h3><p class="sm"></p><div class="pan"></div></article>
+<article class="tp rv" id="c4" data-i="4" data-h="adj"><span class="pls">+</span><span class="n">02</span><h3>Adjunto adverbial</h3><p class="sm"></p><div class="pan"></div></article>
+<article class="tp rv" id="c5" data-i="5" data-h="apo voc"><span class="pls">+</span><span class="n">03</span><h3>Aposto e Vocativo</h3><p class="sm"></p><div class="pan"></div></article>
+<div class="dgwrap"><svg id="dg" viewBox="0 0 560 180" data-a="">
+<g><line class="base" x1="108" y1="45" x2="108" y2="125"/><text class="lb" x="108" y="30">SUJEITO</text></g>
+<g class="voc"><text class="lb" x="38" y="30">VOCATIVO</text><line class="ln" pathLength="100" x1="38" y1="45" x2="38" y2="125"/></g>
+<g class="apo"><text class="lb" x="205" y="30">APOSTO</text><line class="ln" pathLength="100" x1="205" y1="45" x2="205" y2="125"/></g>
+<g class="adj"><text class="lb" x="382" y="30">ADJ. ADV.</text><line class="ln" pathLength="100" x1="382" y1="45" x2="382" y2="125"/><text class="lb" x="480" y="30">ADJ. ADV.</text><line class="ln" pathLength="100" x1="480" y1="45" x2="480" y2="125"/></g>
+<g><text class="w wd voc" x="38" y="150" text-anchor="middle">Felipe,</text><text x="108" y="150" text-anchor="middle">Camila,</text><text class="wd apo" x="205" y="150" text-anchor="middle">minha prima,</text><text x="306" y="150" text-anchor="middle">estudou</text><text class="wd adj" x="382" y="150" text-anchor="middle">ontem</text><text class="wd adj" x="480" y="150" text-anchor="middle">na biblioteca.</text></g>
+</svg></div>
+<div class="lab" style="color:var(--ling)">Toque em cada assunto para destacar no diagrama (arraste para o lado, se necessário)</div>
+</div></div></section>
+
+<section id="quiz"><div class="lab">Revisão</div><h2>Quiz</h2><div id="qs"></div><div id="score"></div></section>
+<footer>Resumo para revisão. Confira nomenclatura e detalhes com o seu material.</footer>
+<nav class="dock"><a class="l" href="#lit">Literatura</a><a class="g2" href="#ling">Análise</a><a href="#quiz">Quiz</a></nav>
+<script>
+const T=[
+{c:"lit",t:"Literatura",h:"A lírica de Castro Alves",lead:"O poeta dos escravos: a 3ª geração romântica troca o mal do século pela causa social.",chips:["Condoreirismo","Abolicionismo","Victor Hugo","1847–1871"],
+d:[["Contexto e estilo","<ul><li>3ª geração romântica (<b>condoreira</b>): o condor simboliza a liberdade e a visão ampla.</li><li>Linguagem grandiloquente: hipérboles, antíteses, apóstrofes, imagens grandiosas (Andes, tempestade, mar).</li><li>Influência de <b>Victor Hugo</b>. Poesia declamatória, feita para o público.</li></ul>"],
+["Lírica social","<ul><li>Obra: <b>Os Escravos</b>, com <i>Vozes d'África</i> e <i>O Navio Negreiro</i>.</li><li>Denúncia do tráfico e da escravidão; defesa da república e da liberdade.</li><li>O escravo é sujeito de dor e dignidade, não mais figura decorativa.</li></ul>"],
+["Lírica amorosa","<ul><li>Obra: <b>Espumas Flutuantes</b> (único livro publicado em vida).</li><li>Rompe com o amor idealizado: mulher real, sensual, desejo e plenitude (<i>Adormecida</i>, <i>Boa-noite</i>).</li><li>Menos sofrimento e morbidez que a 2ª geração.</li></ul>"]]},
+{c:"lit",t:"Literatura",h:"O romance urbano: a crônica de costumes",lead:"O Rio de Janeiro do século XIX vira cenário e tema: casamentos, dinheiro, festas e tipos sociais.",chips:["Macedo","Manuel A. de Almeida","Alencar","Rio de Janeiro"],
+d:[["Características","<ul><li>Enredo ambientado na <b>corte</b>: salões, bailes, família e casamento.</li><li>Crítica leve à sociedade, muitas vezes irônica e bem-humorada.</li><li>Linguagem simples, tom de conversa, narrador que comenta.</li></ul>"],
+["Autores e obras","<ul><li><b>Joaquim Manuel de Macedo</b>: <i>A Moreninha</i> (1844), romance de costumes juvenil e sentimental.</li><li><b>Manuel Antônio de Almeida</b>: <i>Memórias de um Sargento de Milícias</i> (1854), com o malandro Leonardo e o Rio do tempo do Rei.</li><li><b>José de Alencar</b>: perfis de mulher (<i>Lucíola</i>, <i>Senhora</i>), com crítica ao casamento por dinheiro.</li></ul>"],
+["Memórias de um Sargento","<ul><li>Sem herói idealizado: o protagonista é esperto, indisciplinado, o <b>malandro</b>.</li><li>Mundo de favor e jeitinho, sem separação rígida entre ordem e desordem.</li><li>Traço picaresco e humor, próximo do realismo.</li></ul>"]]},
+{c:"lit",t:"Literatura",h:"Realismo em Portugal",lead:"Da Questão Coimbrã às Conferências do Cassino: a literatura passa a analisar e criticar a sociedade.",chips:["Eça de Queirós","Antero de Quental","Cesário Verde","1865–1871"],
+d:[["Marcos históricos","<ul><li><b>Questão Coimbrã</b> (1865): Antero de Quental e Teófilo Braga contra Castilho e o ultrarromantismo.</li><li><b>Conferências do Cassino Lisbonense</b> (1871): debate de ideias novas; marco oficial do Realismo.</li></ul>"],
+["Características","<ul><li>Objetividade, observação e influência do cientificismo e do determinismo.</li><li>Crítica à <b>burguesia</b>, à Igreja, ao casamento e à educação romântica.</li><li>Narrativa de tese: o romance como instrumento de análise social.</li></ul>"],
+["Eça e outros nomes","<ul><li><b>Eça de Queirós</b>: <i>O Crime do Padre Amaro</i> (1875), <i>O Primo Basílio</i> (1878), <i>Os Maias</i> (1888).</li><li><b>Antero de Quental</b>: sonetos filosóficos. <b>Cesário Verde</b>: poesia da cidade, <i>O Sentimento de um Ocidental</i>.</li></ul>"]]},
+{c:"ling",t:"Análise Linguística",h:"Semântica",lead:"O estudo do sentido: palavras se relacionam, mudam de valor e produzem ambiguidade.",chips:["Sinonímia","Polissemia","Denotação","Conotação"],
+d:[["Relações entre palavras","<ul><li><b>Sinonímia</b>: sentidos próximos (belo, bonito). <b>Antonímia</b>: opostos (frio, quente).</li><li><b>Polissemia</b>: uma palavra, vários sentidos (<i>cabeça</i> do corpo, de um prego, de uma empresa).</li><li><b>Homonímia</b>: mesma forma, origens e sentidos diferentes (<i>manga</i> fruta e <i>manga</i> da camisa; <i>banco</i> assento e instituição). Homófonas: som igual, grafia diferente (cela/sela).</li><li><b>Paronímia</b>: sons parecidos (eminente/iminente).</li></ul>"],
+["Denotação e conotação","<ul><li><b>Denotação</b>: sentido literal, de dicionário.</li><li><b>Conotação</b>: sentido figurado, dependente de contexto (<i>Ele tem um coração de pedra</i>).</li></ul>"],
+["Hiperonímia e ambiguidade","<ul><li><b>Hiperônimo</b>: termo geral (flor); <b>hipônimo</b>: específico (rosa).</li><li><b>Ambiguidade</b>: frase com mais de um sentido (<i>Vi o rapaz com o binóculo</i>).</li></ul>"]]},
+{c:"ling",t:"Análise Linguística",h:"Adjunto adverbial",lead:"Termo acessório que indica uma circunstância. Pode ser retirado sem destruir a estrutura da oração.",chips:["Lugar","Tempo","Modo","Intensidade"],
+d:[["Definição","<ul><li>Modifica um <b>verbo</b>, um <b>adjetivo</b> ou outro <b>advérbio</b>.</li><li>Pode ser advérbio (<i>ontem</i>) ou locução adverbial (<i>à noite</i>, <i>com cuidado</i>).</li><li>Tem mobilidade: <i>Ontem choveu</i> / <i>Choveu ontem</i>.</li></ul>"],
+["Circunstâncias","<ul><li>Lugar, tempo, modo, intensidade, causa, meio, instrumento, companhia, finalidade, assunto.</li><li>Também afirmação, negação, dúvida, condição e concessão.</li><li>Ex.: <i>Viajei <b>com ela</b> <b>ontem</b></i> (companhia e tempo).</li></ul>"],
+["Cuidado na prova","<ul><li>Se o verbo <b>exige</b> o termo (<i>Moro em Recife</i>), ele é complemento circunstancial em várias gramáticas, não adjunto. Siga a nomenclatura do seu professor.</li><li>Não confundir com objeto indireto: OI é exigido pelo verbo transitivo indireto.</li></ul>"]]},
+{c:"ling",t:"Análise Linguística",h:"Aposto e Vocativo",lead:"Um explica um termo da oração. O outro chama o interlocutor e fica fora da estrutura sintática.",chips:["Aposto explicativo","Enumerativo","Vocativo","Vírgulas"],
+d:[["Aposto","<ul><li>Termo que <b>explica, resume ou especifica</b> outro. Faz parte da oração.</li><li><b>Explicativo</b>: <i>Recife, capital de Pernambuco, é linda.</i></li><li><b>Enumerativo</b>: <i>Tenho dois sonhos: viajar e estudar.</i></li><li><b>Resumidor</b>: <i>Livros, filmes, música, tudo o encantava.</i></li><li><b>Especificativo</b>: <i>O poeta Castro Alves</i>, sem vírgulas.</li></ul>"],
+["Vocativo","<ul><li>Termo <b>independente</b>: chama, interpela. Não se liga ao verbo nem a outro termo.</li><li>Isolado por vírgulas: <i>Felipe, estude mais.</i> / <i>Meus amigos, ouçam!</i></li><li>Pode vir com interjeição: <i>Ó Senhor, ajuda-me.</i></li></ul>"],
+["Como diferenciar","<ul><li>Aposto <b>refere-se a um termo</b> da frase; vocativo <b>refere-se ao ouvinte</b>.</li><li>Teste: se dá para responder &quot;quem é chamado?&quot;, é vocativo.</li></ul>"]]}
+];
+const Q=[
+["Qual obra de Castro Alves reúne Vozes d'África e O Navio Negreiro?",["Espumas Flutuantes","Os Escravos","A Moreninha","Tragédia no Lar"],1],
+["O animal símbolo da 3ª geração romântica é:",["Águia","Sabiá","Condor","Pomba"],2],
+["Qual romance é de Manuel Antônio de Almeida?",["A Moreninha","Senhora","Memórias de um Sargento de Milícias","Lucíola"],2],
+["Marco oficial do Realismo em Portugal:",["Conferências do Cassino Lisbonense","Semana de 22","Publicação de Os Lusíadas","Revolução dos Cravos"],0],
+["Em &quot;Ele tem coração de pedra&quot;, o sentido figurado é chamado de:",["Conotação","Denotação","Paronímia","Ambiguidade"],0],
+["&quot;Recife, capital de Pernambuco, é bonita.&quot; O trecho em destaque é:",["Vocativo","Adjunto adverbial","Aposto explicativo","Objeto direto"],2],
+["Em &quot;Felipe, estude mais&quot;, o termo Felipe é:",["Aposto","Sujeito","Vocativo","Adjunto adnominal"],2],
+["&quot;Chegou ontem à noite.&quot; Os termos em destaque são:",["Adjuntos adverbiais de tempo","Apostos","Vocativos","Complementos nominais"],0]
+];
+const X=["<ul><li>Condoreirismo é a marca da 3ª geração; combina causa social e sensualidade.</li><li>Diferente de Álvares de Azevedo (2ª geração), de tom mórbido e evasivo.</li></ul>","<ul><li>Crônica de costumes é o retrato do cotidiano carioca, com humor e ironia.</li><li>Não idealiza heróis como o indianismo: o foco é a sociedade urbana.</li></ul>","<ul><li>O Realismo português nasce de debates (1865 e 1871). No Brasil, o marco é 1881, com <i>Memórias Póstumas de Brás Cubas</i>.</li></ul>","<ul><li>Polissemia: uma palavra com sentidos ligados. Homonímia: palavras diferentes com a mesma forma.</li></ul>","<ul><li>Teste: pergunte onde, quando, como, por quê, com quê. Se responde e pode mudar de lugar, é adjunto.</li></ul>","<ul><li>Vocativo chama alguém (2ª pessoa) e vem com vírgula; aposto explica um termo, inclusive na 3ª pessoa.</li></ul>"];
+T.forEach((t,i)=>t.d.push(["Para lembrar",X[i]]));
+const $=(s,r=document)=>[...r.querySelectorAll(s)];
+const dgEl=$("#dg")[0];
+function sp(root){const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),n=[];while(w.nextNode())n.push(w.currentNode);
+n.forEach(t=>{const f=document.createDocumentFragment();t.textContent.split(/(\s+)/).forEach(q=>{if(!q)return;if(/^\s+$/.test(q)){f.appendChild(document.createTextNode(" "));return}const o=document.createElement("span");o.className="wd2";[...q].forEach(c=>{const l=document.createElement("span");l.className="ch";l.textContent=c;o.appendChild(l)});f.appendChild(o)});t.replaceWith(f)})}
+$("[data-i]").forEach(h=>{const t=T[+h.dataset.i];h.querySelector(".sm").textContent=t.lead;
+const pn=h.querySelector(".pan");pn.innerHTML='<div class="pi">'+t.d.map(x=>`<h4>${x[0]}</h4>${x[1]}`).join("")+'</div>';
+const pi=pn.firstChild;[...pi.children].forEach((c,k)=>c.style.setProperty("--k",k));sp(pi);
+h.onclick=e=>{if(e.target.closest(".pan"))return;h.classList.toggle("open");
+if(h.dataset.h!==undefined){dgEl.dataset.a=h.classList.contains("open")?h.dataset.h:""}}});
+$("svg.ic").forEach(v=>[...v.children].forEach((c,k)=>{c.style.setProperty("--i",k);c.style.setProperty("--dx",((((k*57)%11)-5)*28)+"px");c.style.setProperty("--dy",((((k*37)%9)-4)*30-25)+"px");c.style.setProperty("--r",((((k*23)%7)-3)*45)+"deg")}));
+
+let pts=0,dn=0;const qs=$("#qs")[0];
+Q.forEach((q,i)=>{const d=document.createElement("div");d.className="q";d.innerHTML=`<p>${i+1}. ${q[0]}</p>`+q[1].map((o,k)=>`<button data-k="${k}">${o}</button>`).join("");
+d.onclick=e=>{const b=e.target.closest("button");if(!b||d.dataset.done)return;d.dataset.done=1;const k=+b.dataset.k;d.querySelectorAll("button")[q[2]].classList.add("ok");if(k!==q[2])b.classList.add("no");else pts++;if(++dn==Q.length)$("#score")[0].textContent=`Resultado: ${pts}/${Q.length}`};qs.appendChild(d)});
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("on")),{threshold:.1});$(".rv").forEach(e=>io.observe(e));
+
+</script></body></html>
